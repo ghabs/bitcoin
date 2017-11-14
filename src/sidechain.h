@@ -26,7 +26,7 @@ static const size_t VALID_SIDECHAINS_COUNT = 3;
 enum SidechainNumber {
     SIDECHAIN_TEST = 0,
     SIDECHAIN_HIVEMIND = 1,
-    SIDECHAIN_WIMBLE = 2,
+    SIDECHAIN_WIMBLE = 2
 };
 
 struct Sidechain {
@@ -110,7 +110,7 @@ static const std::array<Sidechain, VALID_SIDECHAINS_COUNT> ValidSidechains =
         // {nSidechain, nWaitPeriod, nVerificationPeriod, nMinWorkScore}
         {SIDECHAIN_TEST, 100, 200, 100},
         {SIDECHAIN_HIVEMIND, 100, 200, 100},
-        {SIDECHAIN_WIMBLE, 100, 200, 100},
+        {SIDECHAIN_WIMBLE, 100, 200, 100}
 }};
 
 bool IsSidechainNumberValid(uint8_t nSidechain);
