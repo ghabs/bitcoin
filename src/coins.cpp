@@ -295,9 +295,10 @@ bool CCoinsViewCache::HaveInputs(const CTransaction& tx, bool* fSidechainInputs,
             if (fSidechainInputs) {
                 for (const CTxOut out : coins->vout) {
                     for (const Sidechain& s : ValidSidechains) {
-                        if (HexStr(out.scriptPubKey) == s.sidechainHex)
+                        if (HexStr(out.scriptPubKey) == s.sidechainHex) {
                             *fSidechainInputs = true;
                             *nSidechain = s.nSidechain;
+                        }
                     }
                 }
             }
