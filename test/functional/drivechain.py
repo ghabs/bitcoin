@@ -4,8 +4,6 @@
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 """Test a deposit from the mainchain to the sidechan address
 
-- Test that validateaddress RPC works when running with -disablewallet
-- Test that it is not possible to mine to an invalid address.
 """
 
 from test_framework.test_framework import BitcoinTestFramework
