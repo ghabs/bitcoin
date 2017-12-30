@@ -122,80 +122,30 @@ public:
 
     template<typename Stream>
     void Serialize(Stream &s) const {
-        unsigned int nMaskSize = 0, nMaskCode = 0;
-        CalcMaskSize(nMaskSize, nMaskCode);
-        bool fFirst = vout.size() > 0 && !vout[0].IsNull();
-        bool fSecond = vout.size() > 1 && !vout[1].IsNull();
-        assert(fFirst || fSecond || nMaskCode);
-        unsigned int nCode = 8*(nMaskCode - (fFirst || fSecond ? 0 : 1)) + (fCoinBase ? 1 : 0) + (fFirst ? 2 : 0) + (fSecond ? 4 : 0);
-        // version
-        ::Serialize(s, VARINT(this->nVersion));
-        // header code
-        ::Serialize(s, VARINT(nCode));
-        // spentness bitmask
-        for (unsigned int b = 0; b<nMaskSize; b++) {
-            unsigned char chAvail = 0;
-            for (unsigned int i = 0; i < 8 && 2+b*8+i < vout.size(); i++)
-                if (!vout[2+b*8+i].IsNull())
-                    chAvail |= (1 << i);
-            ::Serialize(s, chAvail);
-        }
-        // critical data
+        assert(!IsSpent());
+        uint32_t code = nHeight * 2 + fCoinBase;
+        ::Serialize(s, VARINT(code));
         ::Serialize(s, fCriticalData);
         if (fCriticalData)
             ::Serialize(s, criticalData);
-
-        // txouts themself
-        for (unsigned int i = 0; i < vout.size(); i++) {
-            if (!vout[i].IsNull())
-                ::Serialize(s, CTxOutCompressor(REF(vout[i])));
-        }
-        // coinbase height
-        ::Serialize(s, VARINT(nHeight));
+        ::Serialize(s, CTxOutCompressor(REF(out)));
     }
 
     template<typename Stream>
     void Unserialize(Stream &s) {
-        unsigned int nCode = 0;
-        // version
-        ::Unserialize(s, VARINT(this->nVersion));
-        // header code
-        ::Unserialize(s, VARINT(nCode));
-        fCoinBase = nCode & 1;
-        std::vector<bool> vAvail(2, false);
-        vAvail[0] = (nCode & 2) != 0;
-        vAvail[1] = (nCode & 4) != 0;
-        unsigned int nMaskCode = (nCode / 8) + ((nCode & 6) != 0 ? 0 : 1);
-        // spentness bitmask
-        while (nMaskCode > 0) {
-            unsigned char chAvail = 0;
-            ::Unserialize(s, chAvail);
-            for (unsigned int p = 0; p < 8; p++) {
-                bool f = (chAvail & (1 << p)) != 0;
-                vAvail.push_back(f);
-            }
-            if (chAvail != 0)
-                nMaskCode--;
-        }
-
-        // critical data
+        uint32_t code = 0;
+        ::Unserialize(s, VARINT(code));
+        nHeight = code >> 1;
+        fCoinBase = code & 1;
         ::Unserialize(s, fCriticalData);
         if (fCriticalData)
             ::Unserialize(s, criticalData);
-
-        // txouts themself
-        vout.assign(vAvail.size(), CTxOut());
-        for (unsigned int i = 0; i < vAvail.size(); i++) {
-            if (vAvail[i])
-                ::Unserialize(s, REF(CTxOutCompressor(vout[i])));
-        }
-        // coinbase height
-        ::Unserialize(s, VARINT(nHeight));
-        Cleanup();
+        ::Unserialize(s, REF(CTxOutCompressor(out)));
     }
 
+
     bool IsSpent() const {
-        return out.IsNull();
+        return out.IsNull(); 
     }
 
     size_t DynamicMemoryUsage() const {
