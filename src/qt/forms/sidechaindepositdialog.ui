@@ -22,9 +22,6 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
-     <property name="styleSheet">
-      <string>color: black;</string>
-     </property>
      <property name="text">
       <string>Deposit</string>
      </property>
