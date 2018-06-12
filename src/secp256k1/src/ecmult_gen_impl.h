@@ -7,12 +7,12 @@
 #ifndef SECP256K1_ECMULT_GEN_IMPL_H
 #define SECP256K1_ECMULT_GEN_IMPL_H
 
-#include "scalar.h"
-#include "group.h"
-#include "ecmult_gen.h"
-#include "hash_impl.h"
+#include <scalar.h>
+#include <group.h>
+#include <ecmult_gen.h>
+#include <hash_impl.h>
 #ifdef USE_ECMULT_STATIC_PRECOMPUTATION
-#include "ecmult_static_context.h"
+#include <ecmult_static_context.h>
 #endif
 static void secp256k1_ecmult_gen_context_init(secp256k1_ecmult_gen_context *ctx) {
     ctx->prec = NULL;

@@ -6,8 +6,8 @@
 #ifndef BITCOIN_SCRIPT_SIGCACHE_H
 #define BITCOIN_SCRIPT_SIGCACHE_H
 
-#include "script/interpreter.h"
-#include "sidechaindb.h"
+#include <script/interpreter.h>
+#include <sidechaindb.h>
 
 #include <vector>
 

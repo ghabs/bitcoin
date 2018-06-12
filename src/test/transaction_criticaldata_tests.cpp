@@ -3,18 +3,18 @@
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 // TODO cleanup includes
-#include "chainparams.h"
-#include "consensus/validation.h"
-#include "core_io.h"
-#include "miner.h"
-#include "random.h"
-#include "script/sigcache.h"
-#include "script/standard.h"
-#include "uint256.h"
-#include "utilstrencodings.h"
-#include "validation.h"
+#include <chainparams.h>
+#include <consensus/validation.h>
+#include <core_io.h>
+#include <miner.h>
+#include <random.h>
+#include <script/sigcache.h>
+#include <script/standard.h>
+#include <uint256.h>
+#include <utilstrencodings.h>
+#include <validation.h>
 
-#include "test/test_bitcoin.h"
+#include <test/test_bitcoin.h>
 
 #include <boost/test/unit_test.hpp>
 

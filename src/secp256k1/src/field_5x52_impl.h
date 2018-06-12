@@ -8,17 +8,17 @@
 #define SECP256K1_FIELD_REPR_IMPL_H
 
 #if defined HAVE_CONFIG_H
-#include "libsecp256k1-config.h"
+#include <libsecp256k1-config.h>
 #endif
 
-#include "util.h"
-#include "num.h"
-#include "field.h"
+#include <util.h>
+#include <num.h>
+#include <field.h>
 
 #if defined(USE_ASM_X86_64)
-#include "field_5x52_asm_impl.h"
+#include <field_5x52_asm_impl.h>
 #else
-#include "field_5x52_int128_impl.h"
+#include <field_5x52_int128_impl.h>
 #endif
 
 /** Implements arithmetic modulo FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFF FFFFFFFE FFFFFC2F,

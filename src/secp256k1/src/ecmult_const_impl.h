@@ -7,10 +7,10 @@
 #ifndef SECP256K1_ECMULT_CONST_IMPL_H
 #define SECP256K1_ECMULT_CONST_IMPL_H
 
-#include "scalar.h"
-#include "group.h"
-#include "ecmult_const.h"
-#include "ecmult_impl.h"
+#include <scalar.h>
+#include <group.h>
+#include <ecmult_const.h>
+#include <ecmult_impl.h>
 
 #ifdef USE_ENDOMORPHISM
     #define WNAF_BITS 128

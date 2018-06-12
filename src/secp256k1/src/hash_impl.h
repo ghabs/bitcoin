@@ -7,7 +7,7 @@
 #ifndef SECP256K1_HASH_IMPL_H
 #define SECP256K1_HASH_IMPL_H
 
-#include "hash.h"
+#include <hash.h>
 
 #include <stdlib.h>
 #include <stdint.h>

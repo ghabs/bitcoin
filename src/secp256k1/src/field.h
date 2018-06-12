@@ -19,18 +19,18 @@
  */
 
 #if defined HAVE_CONFIG_H
-#include "libsecp256k1-config.h"
+#include <libsecp256k1-config.h>
 #endif
 
 #if defined(USE_FIELD_10X26)
-#include "field_10x26.h"
+#include <field_10x26.h>
 #elif defined(USE_FIELD_5X52)
-#include "field_5x52.h"
+#include <field_5x52.h>
 #else
 #error "Please select field implementation"
 #endif
 
-#include "util.h"
+#include <util.h>
 
 /** Normalize a field element. */
 static void secp256k1_fe_normalize(secp256k1_fe *r);

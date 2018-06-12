@@ -7,8 +7,8 @@
 #ifndef SECP256K1_ECMULT_GEN_H
 #define SECP256K1_ECMULT_GEN_H
 
-#include "scalar.h"
-#include "group.h"
+#include <scalar.h>
+#include <group.h>
 
 typedef struct {
     /* For accelerating the computation of a*G:

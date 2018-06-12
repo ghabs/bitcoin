@@ -9,9 +9,9 @@
 
 #include <string.h>
 
-#include "group.h"
-#include "scalar.h"
-#include "ecmult.h"
+#include <group.h>
+#include <scalar.h>
+#include <ecmult.h>
 
 #if defined(EXHAUSTIVE_TEST_ORDER)
 /* We need to lower these values for exhaustive tests because

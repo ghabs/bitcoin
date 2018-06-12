@@ -7,8 +7,8 @@
 #ifndef SECP256K1_GROUP_H
 #define SECP256K1_GROUP_H
 
-#include "num.h"
-#include "field.h"
+#include <num.h>
+#include <field.h>
 
 /** A group element of the secp256k1 curve, in affine coordinates. */
 typedef struct {

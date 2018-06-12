@@ -7,7 +7,7 @@
 #include <string.h>
 #include <secp256k1.h>
 
-#include "lax_der_privatekey_parsing.h"
+#include <lax_der_privatekey_parsing.h>
 
 int ec_privkey_import_der(const secp256k1_context* ctx, unsigned char *out32, const unsigned char *privkey, size_t privkeylen) {
     const unsigned char *end = privkey + privkeylen;

@@ -7,19 +7,19 @@
 #ifndef SECP256K1_SCALAR_IMPL_H
 #define SECP256K1_SCALAR_IMPL_H
 
-#include "group.h"
-#include "scalar.h"
+#include <group.h>
+#include <scalar.h>
 
 #if defined HAVE_CONFIG_H
-#include "libsecp256k1-config.h"
+#include <libsecp256k1-config.h>
 #endif
 
 #if defined(EXHAUSTIVE_TEST_ORDER)
-#include "scalar_low_impl.h"
+#include <scalar_low_impl.h>
 #elif defined(USE_SCALAR_4X64)
-#include "scalar_4x64_impl.h"
+#include <scalar_4x64_impl.h>
 #elif defined(USE_SCALAR_8X32)
-#include "scalar_8x32_impl.h"
+#include <scalar_8x32_impl.h>
 #else
 #error "Please select scalar implementation"
 #endif

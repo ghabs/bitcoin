@@ -7,7 +7,7 @@
 #ifndef SECP256K1_SCALAR_REPR_IMPL_H
 #define SECP256K1_SCALAR_REPR_IMPL_H
 
-#include "scalar.h"
+#include <scalar.h>
 
 #include <string.h>
 

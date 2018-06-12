@@ -7,9 +7,9 @@
 #ifndef SECP256K1_GROUP_IMPL_H
 #define SECP256K1_GROUP_IMPL_H
 
-#include "num.h"
-#include "field.h"
-#include "group.h"
+#include <num.h>
+#include <field.h>
+#include <group.h>
 
 /* These points can be generated in sage as follows:
  *

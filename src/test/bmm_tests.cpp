@@ -2,21 +2,21 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "chainparams.h"
-#include "consensus/consensus.h"
-#include "consensus/validation.h"
-#include "core_io.h"
-#include "miner.h"
-#include "random.h"
-#include "script/sigcache.h"
-#include "script/standard.h"
-#include "sidechain.h"
-#include "sidechaindb.h"
-#include "uint256.h"
-#include "utilstrencodings.h"
-#include "validation.h"
+#include <chainparams.h>
+#include <consensus/consensus.h>
+#include <consensus/validation.h>
+#include <core_io.h>
+#include <miner.h>
+#include <random.h>
+#include <script/sigcache.h>
+#include <script/standard.h>
+#include <sidechain.h>
+#include <sidechaindb.h>
+#include <uint256.h>
+#include <utilstrencodings.h>
+#include <validation.h>
 
-#include "test/test_bitcoin.h"
+#include <test/test_bitcoin.h>
 
 #include <boost/test/unit_test.hpp>
 

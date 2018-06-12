@@ -7,8 +7,8 @@
 #ifndef SECP256K1_ECMULT_H
 #define SECP256K1_ECMULT_H
 
-#include "num.h"
-#include "group.h"
+#include <num.h>
+#include <group.h>
 
 typedef struct {
     /* For accelerating the computation of a*P + b*G: */

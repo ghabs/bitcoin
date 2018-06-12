@@ -7,9 +7,9 @@
 #ifndef SECP256K1_FIELD_REPR_IMPL_H
 #define SECP256K1_FIELD_REPR_IMPL_H
 
-#include "util.h"
-#include "num.h"
-#include "field.h"
+#include <util.h>
+#include <num.h>
+#include <field.h>
 
 #ifdef VERIFY
 static void secp256k1_fe_verify(const secp256k1_fe *a) {

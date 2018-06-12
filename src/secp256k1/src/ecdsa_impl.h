@@ -8,12 +8,12 @@
 #ifndef SECP256K1_ECDSA_IMPL_H
 #define SECP256K1_ECDSA_IMPL_H
 
-#include "scalar.h"
-#include "field.h"
-#include "group.h"
-#include "ecmult.h"
-#include "ecmult_gen.h"
-#include "ecdsa.h"
+#include <scalar.h>
+#include <field.h>
+#include <group.h>
+#include <ecmult.h>
+#include <ecmult_gen.h>
+#include <ecdsa.h>
 
 /** Group order for secp256k1 defined as 'n' in "Standards for Efficient Cryptography" (SEC2) 2.7.1
  *  sage: for t in xrange(1023, -1, -1):

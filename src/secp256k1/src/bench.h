@@ -9,7 +9,7 @@
 
 #include <stdio.h>
 #include <math.h>
-#include "sys/time.h"
+#include <sys/time.h>
 
 static double gettimedouble(void) {
     struct timeval tv;
